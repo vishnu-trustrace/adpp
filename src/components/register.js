@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useMoralis } from "react-moralis";
 
 export default function Register() {
-  const { signup } = useMoralis();
+  const { signup, isAuthenticating } = useMoralis();
   const [userEmail, setUserEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -92,6 +92,7 @@ export default function Register() {
                     <button
                       className="btn btn-primary btn-block"
                       onClick={userRegister}
+                      disabled={isAuthenticating}
                     >
                       Create Account
                     </button>

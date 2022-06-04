@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useMoralis } from "react-moralis";
 
 export default function Login() {
-  const { isAuthenticating, login, authenticate } = useMoralis();
+  const { isAuthenticating, login, authenticate, isAuthenticated } = useMoralis();
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -20,6 +20,7 @@ export default function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    if(isAuthenticated) return alert('Alerady authenticated');
     try {
       await login(userName, password)
         .then((loginResp) => {
@@ -35,6 +36,10 @@ export default function Login() {
   };
 
   const handleWalletLogin = async () => {
+    if(!userName || !password) return alert('Enter username and password!');
+
+    if(isAuthenticated) return alert('Alerady authenticated');
+
     try {
       await authenticate()
         .then((loginResp) => {
@@ -117,6 +122,7 @@ export default function Login() {
                   onClick={handleWalletLogin}
                   style={{ width: "100%" }}
                   className="btn btn-primary btn-lg btn-block"
+                  disabled={isAuthenticating}
                 >
                   Login via Wallet
                 </button>
