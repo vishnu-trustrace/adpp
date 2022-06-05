@@ -20,6 +20,7 @@ export default function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    if(!userName || !password) return alert('Enter username and password!');
     if(isAuthenticated) return alert('Alerady authenticated');
     try {
       await login(userName, password)
@@ -36,7 +37,6 @@ export default function Login() {
   };
 
   const handleWalletLogin = async () => {
-    if(!userName || !password) return alert('Enter username and password!');
 
     if(isAuthenticated) return alert('Alerady authenticated');
 

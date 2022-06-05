@@ -14,7 +14,7 @@ export default function SideNav() {
           <div className="sb-sidenav-menu">
             <div className="nav">
               <div className="sb-sidenav-menu-heading">Core</div>
-              <Link className="nav-link" activeClassName="active" to="/">
+              <Link className="nav-link" to="/">
                 <div className="sb-nav-link-icon">
                   <i className="fas fa-tachometer-alt"></i>
                 </div>
@@ -43,15 +43,15 @@ export default function SideNav() {
                 data-bs-parent="#sidenavAccordion"
               >
                 <nav className="sb-sidenav-menu-nested nav">
-                  <Link className="nav-link" activeClassName="active" to="/transaction-history">
+                  <Link className="nav-link" to="/transaction-history">
                     Transfer History
                   </Link>
                   <a className="nav-link" href="layout-sidenav-light.html">
                     Transfer
                   </a>
-                  <a className="nav-link" href="layout-sidenav-light.html">
+                  <Link className="nav-link" to="/balance">
                     Balance
-                  </a>
+                  </Link>
                 </nav>
               </div>
             </div>

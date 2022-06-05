@@ -1,8 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { useMoralis } from "react-moralis";
-import Nav from "./nav";
-import SideNav from "./side-nav";
-import Footer from "./footer";
 
 export default function Dashboard() {
   const navigate = useNavigate();
