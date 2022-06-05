@@ -46,9 +46,9 @@ export default function SideNav() {
                   <Link className="nav-link" to="/transaction-history">
                     Transfer History
                   </Link>
-                  <a className="nav-link" href="layout-sidenav-light.html">
+                  <Link className="nav-link" to="/transfer">
                     Transfer
-                  </a>
+                  </Link>
                   <Link className="nav-link" to="/balance">
                     Balance
                   </Link>

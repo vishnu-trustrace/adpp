@@ -25,3 +25,7 @@ code {
   justify-content: center;
   align-items: center;
 }
+
+.mt-20 {
+  margin-top: 20px;
+}

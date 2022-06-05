@@ -18,11 +18,15 @@ export default function Balance() {
         <div className="row">
           <div className="container">
             <div className="flex-content-center">
-              <div className="jumbotron">
-                <h3>Balance</h3>
-                <p>
-                  { userBalance.balance }
-                </p>
+              <div className="card">
+                <div className="card-header">Balance</div>
+                <div className="card-body">
+                  <blockquote className="blockquote mb-0">
+                    <p>
+                      { userBalance.balance }
+                    </p>
+                  </blockquote>
+                </div>
               </div>
             </div>
           </div>

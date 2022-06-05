@@ -12,6 +12,7 @@ import Nav from "./components/nav";
 import SideNav from "./components/side-nav";
 import Footer from "./components/footer";
 import Balance from "./components/balance";
+import Transfer from "./components/transfer";
 
 function App() {
   const { isAuthenticated } = useMoralis();
@@ -39,7 +40,8 @@ function App() {
     },
     { path: "/landing", element: <LandingPage /> },
     { path: "/transaction-history", element: authenticateAndReturnComponent(TransactionHistory, true) },
-    { path: "/balance", element: authenticateAndReturnComponent(Balance, true) }
+    { path: "/balance", element: authenticateAndReturnComponent(Balance, true) },
+    { path: "/transfer", element: authenticateAndReturnComponent(Transfer, true) }
   ]);
 
   if(['/login','/register'].includes(location.pathname))
